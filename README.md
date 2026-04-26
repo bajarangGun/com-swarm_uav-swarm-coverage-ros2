@@ -58,29 +58,29 @@ To run this simulation, your system must have the following installed:
 
 ### Step 1: Create the Workspace & Clone
 Open your terminal and create a dedicated ROS 2 workspace:
- 
+```bash
 mkdir -p ~/concpp_ws/src
 cd ~/concpp_ws/src
 git clone [https://github.com/bajarangGun/com-swarm_uav-swarm-coverage-ros2.git](https://github.com/bajarangGun/com-swarm_uav-swarm-coverage-ros2.git) con_plan_exec_pkg
----
+```
 
-###Step 2: Build the Package
+### Step 2: Build the Package
 Navigate to the root of your workspace and compile the package:
-
+```bash
 cd ~/concpp_ws
 colcon build --packages-select con_plan_exec_pkg --symlink-install
----
+```
 
-###Step 3: Launching the Simulation & Visualization
+### Step 3: Launching the Simulation & Visualization
 Source your workspace and launch the swarm central brain. This command configures a 20x20 grid with 3 drones and a 6.0 cell communication threshold:
-
+```bash
 source ~/concpp_ws/install/setup.bash
 ros2 launch con_plan_exec_pkg swarm.launch.py rc:=3 ws_x:=20 ws_y:=20 drone_locs:="0,0; 1,0; 2,0" comm_range:=6.0 cell_size:=5.0 takeoff_alt:=10.0
----
+```
 
-###Step 4: Visualize in RViz2
+### Step 4: Visualize in RViz2
 To watch the algorithm dynamically assign paths and monitor the drones in real-time, open a new terminal tab, source the workspace again, and launch RViz:
-
+```bash
 source ~/concpp_ws/install/setup.bash
 rviz2
----
+```
