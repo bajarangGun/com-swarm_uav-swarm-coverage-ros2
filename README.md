@@ -70,15 +70,21 @@ Navigate to the root of your workspace and compile the package:
 cd ~/concpp_ws
 colcon build --packages-select con_plan_exec_pkg --symlink-install
 ```
+### Step 3: Initialize ArduPilot SITL & MAVROS
+Before launching the central brain, you must have your simulated drone environment running.
 
-### Step 3: Launching the Simulation & Visualization
+Initialize three separate ArduPilot SITL vehicle instances (representing drone0, drone1, and drone2).
+
+Ensure your ROS 2 bridge (e.g., MAVROS) is running and actively connecting the SITL instances to the ROS 2 network so the central planner can publish trajectory commands.
+
+### Launching the Simulation & Visualization
 Source your workspace and launch the swarm central brain. This command configures a 20x20 grid with 3 drones and a 6.0 cell communication threshold:
 ```bash
 source ~/concpp_ws/install/setup.bash
 ros2 launch con_plan_exec_pkg swarm.launch.py rc:=3 ws_x:=20 ws_y:=20 drone_locs:="0,0; 1,0; 2,0" comm_range:=6.0 cell_size:=5.0 takeoff_alt:=10.0
 ```
 
-### Step 4: Visualize in RViz2
+###  Visualize in RViz2
 To watch the algorithm dynamically assign paths and monitor the drones in real-time, open a new terminal tab, source the workspace again, and launch RViz:
 ```bash
 source ~/concpp_ws/install/setup.bash
