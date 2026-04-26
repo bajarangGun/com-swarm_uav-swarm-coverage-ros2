@@ -1,0 +1,3 @@
+bool stop_robot
+---
+bool stopped_robot

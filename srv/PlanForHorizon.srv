@@ -1,0 +1,6 @@
+int16 hor_id
+PlanInstance[] plans
+uint64 start_from_intrvl
+bool stop
+---
+uint64 rcvd_intrvl

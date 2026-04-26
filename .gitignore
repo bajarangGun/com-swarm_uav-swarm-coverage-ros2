@@ -1,0 +1,14 @@
+# ROS 2 ignore
+build/
+install/
+log/
+
+# OS generated files
+.DS_Store
+.vscode/
+
+# Data files (unless you want to upload them)
+*.bag
+*.db3
+result.txt
+comp_time_info.txt
