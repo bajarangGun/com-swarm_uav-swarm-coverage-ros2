@@ -90,3 +90,13 @@ To watch the algorithm dynamically assign paths and monitor the drones in real-t
 source ~/concpp_ws/install/setup.bash
 rviz2
 ```
+## Authors
+
+**Course Project — UAV Communications (EE-798T)** **Professor:** Prof. Ketan Rajawat
+**Group Members**   
+
+1. Md Tahseen Aslam (251010069)
+2. Divyansh singh (251010064) 
+
+---
+
